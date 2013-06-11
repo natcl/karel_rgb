@@ -7,42 +7,23 @@
 
 // note 84 = w
 
-const byte r1pin = 3;
-const byte g1pin = 4;
-const byte b1pin = 5;
-
-const byte r2pin = 6;
-const byte g2pin = 9;
-const byte b2pin = 10;
-
-const byte w1pin = 20;
-
-int r1val = 256;
-int g1val = 256;
-int b1val = 256;
-int r2val = 256;
-int g2val = 256;
-int b2val = 256;
-int w1val = 256;
+const byte NCHANNELS = 10; 
+const byte PIN_ARRAY[] = {3,4,5,6,9,10,20,21,22,13}; 
+const byte NOTE_ARRAY[] = {48,52,55,60,64,67,72,76,79,84};
+const byte CTRL_ARRAY[] = {48,52,55,60,64,67,72,76,79,84};
+int pin_values[] = {256,256,256,256,256,256,256,256,256,256};
 
 void setup() {
-  pinMode(r1pin, OUTPUT);
-  pinMode(g1pin, OUTPUT);
-  pinMode(b1pin, OUTPUT);
-  pinMode(r2pin, OUTPUT);
-  pinMode(g2pin, OUTPUT);
-  pinMode(w1pin, OUTPUT);
-  analogWrite(r1pin, r1val);
-  analogWrite(g1pin, g1val);
-  analogWrite(b1pin, b1val);
-  analogWrite(r2pin, r2val);
-  analogWrite(g2pin, g2val);
-  analogWrite(b2pin, b2val);
-  analogWrite(w1pin, w1val);
   
+  for (byte channel = 0; channel < NCHANNELS; channel++){
+    pinMode(PIN_ARRAY[channel], OUTPUT);
+    analogWrite(PIN_ARRAY[channel], pin_values[channel]);
+  }
+
   usbMIDI.setHandleNoteOn(OnNoteOn);
   usbMIDI.setHandleNoteOff(OnNoteOff);
   usbMIDI.setHandleVelocityChange(OnVelocityChange);
+  usbMIDI.setHandleControlChange(OnControlChange);
 }
 
 void loop() {
@@ -50,54 +31,42 @@ void loop() {
   Serial.begin(115200);
   usbMIDI.read();
   
-  analogWrite(r1pin,r1val);
-  analogWrite(g1pin,g1val);
-  analogWrite(b1pin,b1val);
-  analogWrite(r2pin,r2val);
-  analogWrite(g2pin,g2val);
-  analogWrite(b2pin,b2val);
-  analogWrite(w1pin,w1val);
-  
+  for (byte channel = 0; channel < NCHANNELS; channel++){
+    analogWrite(PIN_ARRAY[channel], pin_values[channel]);
+  }
 }
 
 void OnNoteOn(byte channel, byte note, byte velocity) {
-  switch (note) {
-    case 60:
-      r1val = 256-(velocity / 127. * 256.);
-      break;
-    case 64:
-      g1val = 256-(velocity / 127. * 256.);
-      break;
-    case 67:
-      b1val = 256-(velocity / 127. * 256.);
-      break;
+  Serial.println("ON");
+  for (byte n = 0; n < NCHANNELS; n++){
+    Serial.println(NOTE_ARRAY[n]);
+    if (note == NOTE_ARRAY[n]) {
+      pin_values[n] = 256-(velocity / 127. * 256.);
+      Serial.println(pin_values[n]);
+    } 
   }
 }
 
 void OnNoteOff(byte channel, byte note, byte velocity) {
-  switch (note) {
-    case 60:
-      r1val = 256;
-      break;
-    case 64:
-      g1val = 256;
-      break;
-    case 67:
-      b1val = 256;
-      break;
+  for (byte n = 0; n < NCHANNELS; n++){
+    if (note == NOTE_ARRAY[n]) {
+      pin_values[n] = 256;
+    } 
   }
 }
   
 void OnVelocityChange(byte channel, byte note, byte velocity) {
-  switch (note) {
-    case 60:
-      r1val = 256-(velocity / 127. * 256.);
-      break;
-    case 64:
-      g1val = 256-(velocity / 127. * 256.);
-      break;
-    case 67:
-      b1val = 256-(velocity / 127. * 256.);
-      break;
+  for (byte n = 0; n < NCHANNELS; n++){
+    if (note == NOTE_ARRAY[n]) {
+      pin_values[n] = 256-(velocity / 127. * 256.);
+    } 
+  }
+}
+
+void OnControlChange(byte channel, byte controller, byte value) {
+  for (byte c = 0; c < NCHANNELS; c++){
+    if (controller == CTRL_ARRAY[c]) {
+      pin_values[c] = 256-(value / 127. * 256.);
+    } 
   }
 }
