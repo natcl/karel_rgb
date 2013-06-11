@@ -37,12 +37,9 @@ void loop() {
 }
 
 void OnNoteOn(byte channel, byte note, byte velocity) {
-  Serial.println("ON");
   for (byte n = 0; n < NCHANNELS; n++){
-    Serial.println(NOTE_ARRAY[n]);
     if (note == NOTE_ARRAY[n]) {
       pin_values[n] = 256-(velocity / 127. * 256.);
-      Serial.println(pin_values[n]);
     } 
   }
 }
