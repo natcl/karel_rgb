@@ -1,5 +1,5 @@
 const byte NCHANNELS = 10; 
-const byte PIN_ARRAY[] = {3,4,5,6,9,10,20,21,22,13}; 
+const byte PIN_ARRAY[] = {3,4,5,6,9,10,21,22,23,13}; 
 const byte NOTE_ARRAY[] = {48,52,55,60,64,67,72,76,79,84};
 const byte CTRL_ARRAY[] = {48,52,55,60,64,67,72,76,79,84};
 int pin_values[] = {256,256,256,256,256,256,256,256,256,256};
