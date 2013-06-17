@@ -7,6 +7,8 @@ int pin_values[] = {256,256,256,256,256,256,256,256,256,256};
 void setup() {
   for (byte channel = 0; channel < NCHANNELS; channel++){
     pinMode(PIN_ARRAY[channel], OUTPUT);
+    analogWrite(PIN_ARRAY[channel], 0);
+    delay(500);
     analogWrite(PIN_ARRAY[channel], pin_values[channel]);
   }
 
