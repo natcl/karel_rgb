@@ -92,7 +92,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 79.0, 12.0, 25.0, 25.0 ]
 				}
 
@@ -148,7 +148,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 211.0, 317.0, 161.0, 20.0 ],
+					"patching_rect" : [ 229.0, 317.0, 161.0, 20.0 ],
 					"text" : "Nom de la sortie à confirmer"
 				}
 
@@ -188,8 +188,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 95.0, 317.0, 109.0, 20.0 ],
-					"text" : "midiout \"Teensy 3\""
+					"patching_rect" : [ 95.0, 317.0, 128.0, 20.0 ],
+					"text" : "midiout \"Teensy MIDI\""
 				}
 
 			}
@@ -344,7 +344,8 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [  ]
 	}
 
 }
