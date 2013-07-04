@@ -31,6 +31,19 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"id" : "obj-26",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 346.0, 348.0, 34.0, 20.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-18",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -2061,7 +2074,8 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ -231.0, 472.0, 110.5, 18.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 155.0, 474.0, 110.5, 18.0 ]
+					"presentation_rect" : [ 155.0, 474.0, 110.5, 18.0 ],
+					"text" : " 1 test"
 				}
 
 			}
@@ -2402,8 +2416,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 31.0, 153.0, 273.0, 20.0 ],
-					"text" : "mxj net.multi.send @group 224.0.0.2 @port 7474"
+					"patching_rect" : [ 31.0, 153.0, 354.0, 20.0 ],
+					"text" : "mxj net.multi.send @group 224.0.0.2 @port 7474 @maxhops 10"
 				}
 
 			}
@@ -2663,6 +2677,15 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-4", 0 ]
@@ -2943,28 +2966,28 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "karel_slot.maxpat",
-				"bootpath" : "/Users/Nat/Desktop/karel_player",
+				"bootpath" : "/Users/Nat/Source/karel_rgb/karel_player",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "chansons.txt",
-				"bootpath" : "/Users/Nat/Desktop/karel_player",
+				"bootpath" : "/Users/Nat/Source/karel_rgb/karel_player",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "config.txt",
-				"bootpath" : "/Users/Nat/Desktop/karel_player",
+				"bootpath" : "/Users/Nat/Source/karel_rgb/karel_player",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "karel.json",
-				"bootpath" : "/Users/Nat/Desktop/karel_player",
+				"bootpath" : "/Users/Nat/Source/karel_rgb/karel_player",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
