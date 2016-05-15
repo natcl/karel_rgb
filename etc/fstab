@@ -1,0 +1,1 @@
+LABEL=CLEF /mnt/clef vfat auto,users,rw,uid=1000,gid=100,umask=0002 0 0
