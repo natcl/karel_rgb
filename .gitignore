@@ -1,7 +1,6 @@
 *.reapeaks
 karel.json
 *.aif
-*.mid
 *.sublime-workspace*
 *.DS_Store*
 *.py[cod]
