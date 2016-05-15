@@ -1,2 +1,2 @@
 #!/bin/sh
-pdextended -r 48000 -noadc -nogui -midioutdev 1 player.pd
+pdextended -r 48000 -noadc -nogui -midioutdev 1 -audiooutdev 5 player.pd
