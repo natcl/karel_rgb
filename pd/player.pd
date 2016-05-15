@@ -145,9 +145,10 @@
 #X obj 24 150 midiparse;
 #X obj 24 176 stripnote;
 #X obj 24 203 sel 60 61;
-#X obj 170 248 route 7;
+#X obj 171 304 route 7;
 #X obj 170 222 swap;
-#X obj 170 276 print volume;
+#X obj 171 332 print volume;
+#X obj 170 262 pack f f;
 #X connect 3 0 28 0;
 #X connect 4 0 6 0;
 #X connect 4 0 22 0;
@@ -176,4 +177,6 @@
 #X connect 31 0 12 0;
 #X connect 31 1 11 0;
 #X connect 32 0 34 0;
-#X connect 33 0 32 0;
+#X connect 33 0 35 0;
+#X connect 33 1 35 1;
+#X connect 35 0 32 0;
