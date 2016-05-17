@@ -17,3 +17,8 @@
 ### Unit 3
 - DT 3000
 - MY 3003
+
+## USB Ports
+| USB Audio | Clef USB |
+|-----------|----------|
+| AKAI      | Teensy   |
