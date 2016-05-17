@@ -1,4 +1,4 @@
-#N canvas 330 50 736 494 10;
+#N canvas 525 37 736 494 10;
 #X text 70 2 Réception d'un objet serie;
 #X text 73 20 Midi player;
 #X text 67 33 Audio player;
@@ -76,7 +76,7 @@
 #X msg 99 186 0;
 #X obj 112 231 s EOF;
 #X obj 284 76 hsl 128 15 0 1 0 0 empty empty Gain 10 -8 0 10 -261234
--1 -1 7200 1;
+-1 -1 5080 1;
 #X obj 281 41 r vol;
 #X obj 248 143 r stop;
 #X obj 236 19 r init;
@@ -138,12 +138,12 @@
 #X obj 131 91 pack 1 7;
 #X obj 226 148 s vol;
 #X obj 226 72 / 127;
-#X obj 312 245 s play;
+#X obj 311 246 s play;
 #X obj 363 192 s stop;
 #X obj 311 150 t b b;
 #X msg 170 183 60 127;
 #X msg 228 183 61 127;
-#X obj 311 208 delay 20;
+#X obj 318 208 delay 20;
 #N canvas 609 123 640 325 lights 0;
 #X obj 99 17 inlet;
 #X obj 134 201 midiformat;
@@ -191,11 +191,10 @@
 #X connect 8 0 3 2;
 #X connect 9 0 3 2;
 #X connect 11 0 10 0;
-#X connect 14 0 17 0;
+#X connect 14 0 12 0;
 #X connect 14 1 13 0;
 #X connect 15 0 3 0;
 #X connect 16 0 3 0;
-#X connect 17 0 12 0;
 #X connect 19 0 14 0;
 #X connect 19 0 15 0;
 #X connect 19 1 13 0;
