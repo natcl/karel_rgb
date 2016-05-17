@@ -125,7 +125,7 @@
 #X obj 302 365 s file;
 #X obj 351 366 print file;
 #X obj 24 258 t b b;
-#N canvas 713 45 450 300 control 0;
+#N canvas 379 131 450 300 control 0;
 #X obj 38 12 notein;
 #X obj 36 57 stripnote;
 #X obj 36 121 + 1;
@@ -177,6 +177,8 @@
 #X connect 13 0 5 0;
 #X restore 69 119 pd lights;
 #X obj 311 121 sel 67 89;
+#X obj 353 60 ctlin 56;
+#X obj 378 89 print delay;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 6 0;
@@ -191,14 +193,17 @@
 #X connect 8 0 3 2;
 #X connect 9 0 3 2;
 #X connect 11 0 10 0;
-#X connect 14 0 12 0;
+#X connect 14 0 17 0;
 #X connect 14 1 13 0;
 #X connect 15 0 3 0;
 #X connect 16 0 3 0;
+#X connect 17 0 12 0;
 #X connect 19 0 14 0;
 #X connect 19 0 15 0;
 #X connect 19 1 13 0;
 #X connect 19 1 16 0;
+#X connect 20 0 17 1;
+#X connect 20 0 21 0;
 #X restore 407 216 pd control;
 #X obj 147 32 r to_serial;
 #X obj 24 105 comport 4 9600;
