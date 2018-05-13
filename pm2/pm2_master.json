@@ -1,8 +1,8 @@
 
 {
     "apps" : [{
-        "name"        : "pure-data",
-        "script"      : "pdextended",
+        "name"        : "pd",
+        "script"      : "pd",
         "args"        : "-r 44100 -noadc -nogui -audiooutdev 7 -midioutdev 2,1 -midiindev 1 player.pd",
         "watch"       : false,
         "merge_logs"  : true
